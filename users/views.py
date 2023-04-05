@@ -1,4 +1,4 @@
-"""Модуль, який містить визначення views для додатку користувачів."""
+"""Модуль, який містить визначення views для додатку users."""
 
 from django.contrib.auth import get_user_model
 
