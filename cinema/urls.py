@@ -1,4 +1,4 @@
-"""cinema URL Configuration
+"""cinema URL Configuration.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -13,20 +13,50 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
+
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
+    TokenVerifyView,
 )
-from rest_framework_simplejwt.views import TokenVerifyView
 
 from cinema.routers import urlpatterns as router_urlpatterns
+
+"""
+drf_spectacular - це пакет для Django REST framework, який дозволяє автоматично генерувати документацію для вашого API.
+SpectacularAPIView - це в'ю для генерації специфікації OpenAPI, яка включає опис всіх маршрутів API та іншої
+мета-інформації. Цю в'ю можна використовувати, щоб отримати специфікацію у форматі JSON або YAML.
+SpectacularRedocView - це в'ю, яка генерує інтерактивну документацію у форматі ReDoc.
+ReDoc - це спеціальний інструмент, який дозволяє візуалізувати специфікацію OpenAPI у вигляді зручної для
+користувача документації зі згортанням секцій та можливістю пошуку.
+SpectacularSwaggerView - це в'ю, яка генерує інтерактивну документацію у форматі Swagger UI.
+Swagger UI - це інструмент, який дозволяє візуалізувати специфікацію OpenAPI у вигляді інтерактивної документації
+з можливістю тестування API напряму з веб-інтерфейсу.
+Ці в'ю можна додати до вашого проекту Django REST framework, щоб забезпечити легкий доступ до документації вашого API.
+Використання drf_spectacular дозволяє зменшити ручну роботу з написанням документації та підтримкою її у відповідності
+до специфікації OpenAPI.
+"""
+
+"""
+rest_framework_simplejwt - це пакет для Django REST framework, який дозволяє додавати підтримку JWT-аутентифікації
+до вашого API.
+TokenObtainPairView - це в'ю, яка дозволяє створювати пару токенів (access token та refresh token) для аутентифікації
+користувача. Клієнт повинен використовувати access token для авторизації запитів до захищених ресурсів,
+а refresh token - для отримання нової пари токенів після закінчення терміну дії старої пари.
+TokenRefreshView - це в'ю, яка дозволяє оновлювати пару токенів (access token та refresh token) за допомогою
+refresh token. Ця в'ю поверне нову пару токенів, які можна використовувати для подальшої авторизації.
+TokenVerifyView - це в'ю, яка дозволяє перевіряти чинність токенів. Клієнт може відправити access token до цієї в'ю,
+щоб перевірити, чи дійсний токен, та отримати інформацію про користувача, який видавав токен.
+"""
 
 urlpatterns = [
     path("admin/", admin.site.urls),

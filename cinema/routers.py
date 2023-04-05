@@ -9,11 +9,11 @@
 Цей модуль є частиною додатку та повинен бути встановлений та налаштований разом з ним.
 """
 
+from rest_framework.routers import DefaultRouter
+
 from cinema_hall import views as cinema_hall_views
 
 from purchase import views as purchase_views
-
-from rest_framework.routers import DefaultRouter
 
 from screening import views as screening_views
 
