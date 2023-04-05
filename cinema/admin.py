@@ -1,13 +1,35 @@
+
+"""
+Цей модуль admin.py містить налаштування адміністративної частини додатку cinema.
+
+Він містить класи ModelAdmin та їх похідні, що надають можливість керувати моделями
+бази даних через веб-інтерфейс Django.
+"""
 from django.contrib.admin import ModelAdmin
 
 
 class AdminInteractPermissionModelAdminMixin(
     ModelAdmin,
 ):
+    """
+    Клас ModelAdmin - це базовий клас Django для створення адміністративних інтерфейсів для моделей Django.
+
+    Клас ModelAdmin дозволяє вам налаштовувати, які поля моделі будуть відображені в адміністративному інтерфейсі,
+    які фільтри та пошукові поля будуть використовуватися, а також які дії будуть доступні для користувачів.
+    """
+
     def has_add_permission(
         self,
         request,
     ):
+        """
+        Метод has_add_permission.
+
+        Метод has_add_permission перевіряє, чи має поточний користувач, який звернувся до сервера через request,
+        право на додавання нових об'єктів.
+
+        Повертає True, якщо користувач є суперкористувачем (має всі права), або False в іншому випадку.
+        """
         return request.user.is_superuser
 
     def has_view_or_change_permission(
@@ -15,6 +37,16 @@ class AdminInteractPermissionModelAdminMixin(
         request,
         obj=None,
     ):
+        """
+        Метод has_view_or_change_permission.
+
+        Метод has_view_or_change_permission перевіряє, чи має поточний користувач, який звернувся до сервера
+        через request, право на перегляд або зміну об'єктів. При перегляді передається параметр obj,
+        який вказує на конкретний об'єкт, якщо такий є.
+        Якщо obj є None, то метод повертає True, якщо користувач є суперкористувачем (має всі права),
+        або False в іншому випадку. Якщо obj є не None, то метод повертає True, якщо користувач має права
+        на перегляд або зміну конкретного об'єкта, або False в іншому випадку.
+        """
         return request.user.is_superuser
 
     def has_delete_permission(
@@ -22,4 +54,14 @@ class AdminInteractPermissionModelAdminMixin(
         request,
         obj=None,
     ):
+        """
+        Метод has_delete_permission.
+
+        Метод has_delete_permission перевіряє, чи має поточний користувач, який звернувся до сервера через request,
+        право на видалення об'єктів. При видаленні передається параметр obj, який вказує на конкретний об'єкт,
+        якщо такий є.
+        Якщо obj є None, то метод повертає True, якщо користувач є суперкористувачем (має всі права),
+        або False в іншому випадку. Якщо obj є не None, то метод повертає True, якщо користувач має права на видалення
+        конкретного об'єкта, або False в іншому випадку.
+        """
         return request.user.is_superuser
