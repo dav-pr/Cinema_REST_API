@@ -1,7 +1,10 @@
+"""Модуль містить реалізацію послуг або бізнес-логіки, пов'язаної з додатком purchase."""
+
 from decimal import Decimal
 
-from django.db.models import Sum, QuerySet
+from django.db.models import QuerySet, Sum
 from django.utils import timezone
+
 from rest_framework.generics import get_object_or_404
 
 from purchase.errors import OrderingServiceError
@@ -14,6 +17,8 @@ def get_user_cart(
     buyer: User,
     qs: QuerySet,
 ):
+    """Функція для отримання корзини користувача."""
+    # запит до бази даних, який повертає список замовлень з корзини користувача.
     added_to_cart_orders = (
         qs.filter(
             buyer=buyer,
@@ -28,6 +33,7 @@ def get_user_cart(
         )
     )
 
+    # gовертає загальну ціну всіх елементів у кошику користувача.
     total_price = sum(
         Ticket.objects.filter(
             id__in=[i.ticket.id for i in added_to_cart_orders],
@@ -39,6 +45,7 @@ def get_user_cart(
         )
     )
 
+    # повертає словник, що містить список елементів у кошику користувача та загальну ціну всіх елементів.
     return {
         "items": [
             {
@@ -59,6 +66,7 @@ def add_ticket_to_cart(
     buyer: User,
     ticket: Ticket,
 ) -> Order:
+    """Функція додає вибраний квиток до корзини користувача, створюючи нове замовлення."""
     operation = Order.OrderOperation.ADD_TO_CART
 
     if ticket.is_sold:
@@ -82,6 +90,7 @@ def remove_ticket_from_cart(
     buyer: User,
     order_id: int,
 ):
+    """Функція remove_ticket_from_cart видаляє замоллення  із кошика користувача, створюючи нове замовлення."""
     Order.objects.filter(
         id=order_id,
         buyer=buyer,
@@ -93,6 +102,7 @@ def buy_ticket(
     order_id: int,
     buyer: User,
 ):
+    """Функція buy_ticket реалізує логіку придбання квитка."""
     order = get_object_or_404(
         Order.objects.select_related(
             "ticket",
@@ -119,6 +129,7 @@ def buy_ticket(
 def get_buyer_history(
     buyer: User,
 ):
+    """Функція get_buyer_history повертає історію покупок."""
     return Order.objects.filter(
         buyer=buyer,
         operation__in=[
@@ -132,6 +143,7 @@ def return_purchased_ticket(
     buyer: User,
     order_id: int,
 ) -> Order:
+    """Функція return_purchased_ticket реалізує повернення квитка."""
     order = get_object_or_404(
         Order.objects.select_related(
             "ticket",
@@ -173,6 +185,14 @@ def return_purchased_ticket(
 def get_total_spent_amount(
     buyer: User,
 ) -> Decimal:
+    """
+    Функція get_total_spent_amount.
+
+    Функція призначена для обчислення загальної суми витраченої грошей користувачем на квитки, які він купив.
+    Вона використовує модель Order з атрибутом operation, щоб отримати всі замовлення користувача з операцією
+    PURCHASE (купівля), тобто всі квитки, які користувач купив. Потім функція викликає метод aggregate моделі Order,
+    щоб обчислити загальну суму цін квитків, які користувач купив. Результат повертається як Decimal.
+    """
     return Order.objects.filter(
         buyer=buyer,
         operation=Order.OrderOperation.PURCHASE,
