@@ -63,7 +63,7 @@ class UserViewSet(CreateModelMixin, GenericViewSet):
 
 # реалізація логаута
 
-@extend_schema(
+    @extend_schema(
         request=RefreshTokenSerializer,
         responses={
             status.HTTP_204_NO_CONTENT: None,
