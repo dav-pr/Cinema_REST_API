@@ -69,6 +69,14 @@ def add_ticket_to_cart(
     """Функція додає вибраний квиток до корзини користувача, створюючи нове замовлення."""
     operation = Order.OrderOperation.ADD_TO_CART
 
+    if ticket.orders.filter(
+            buyer=buyer,
+            operation=operation,
+    ).exists():
+        raise OrderingServiceError(
+            "Ticket is already added to cart",
+        )
+
     if ticket.is_sold:
         raise OrderingServiceError(
             "Ticket can't be added to cart, it's already sold",
@@ -90,12 +98,17 @@ def remove_ticket_from_cart(
     buyer: User,
     order_id: int,
 ):
-    """Функція remove_ticket_from_cart видаляє замоллення  із кошика користувача, створюючи нове замовлення."""
-    Order.objects.filter(
-        id=order_id,
+    """Функція remove_ticket_from_cart видаляє замовлення  із кошика користувача, створюючи нове замовлення."""
+    order = get_object_or_404(
+        Order.objects.select_related(
+            "ticket",
+        ),
+        pk=order_id,
         buyer=buyer,
         operation=Order.OrderOperation.ADD_TO_CART,
-    ).delete()
+    )
+
+    order.delete()
 
 
 def buy_ticket(
@@ -108,6 +121,8 @@ def buy_ticket(
             "ticket",
         ),
         pk=order_id,
+        buyer=buyer,
+        operation=Order.OrderOperation.ADD_TO_CART,
     )
 
     if order.ticket.price > buyer.balance:
@@ -193,7 +208,13 @@ def get_total_spent_amount(
     PURCHASE (купівля), тобто всі квитки, які користувач купив. Потім функція викликає метод aggregate моделі Order,
     щоб обчислити загальну суму цін квитків, які користувач купив. Результат повертається як Decimal.
     """
-    return Order.objects.filter(
+    total_purchased = Order.objects.filter(
         buyer=buyer,
         operation=Order.OrderOperation.PURCHASE,
     ).aggregate(total_price=Sum("ticket__price"),)["total_price"]
+
+    total_returned = Order.objects.filter(
+        buyer=buyer,
+        operation=Order.OrderOperation.RETURN,
+    ).aggregate(total_price=Sum("ticket__price"), )["total_price"]
+    return total_purchased - total_returned if total_returned else total_purchased

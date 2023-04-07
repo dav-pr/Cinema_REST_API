@@ -7,7 +7,7 @@
 from django.contrib import admin
 
 from cinema.admin import AdminInteractPermissionModelAdminMixin
-from screening.models import Movie
+from screening.models import Movie, Ticket
 
 
 """
@@ -19,5 +19,10 @@ Mixin-класи є одним із способів додавання функ
 """
 admin.site.register(
     Movie,
+    AdminInteractPermissionModelAdminMixin,
+)
+
+admin.site.register(
+    Ticket,
     AdminInteractPermissionModelAdminMixin,
 )

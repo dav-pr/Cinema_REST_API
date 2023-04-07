@@ -23,7 +23,10 @@ class CinemaViewSet(
     GenericViewSet,
 ):
     """
-    клас CinemaViewSet.
+
+    Клас CinemaViewSet.
+
+    Вказаний клас реалізує endpoint api/cinema: отримання списку кінотеатрів.
 
     Цей клас є підкласом GenericViewSet, який включає в себе кілька міксинів: CreateModelMixin, ListModelMixin та
     RetrieveModelMixin. Використовуючи цей клас, можна створити ендпойнти для створення, списку та отримання даних

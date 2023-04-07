@@ -133,7 +133,7 @@ class OrderViewSet(
             pk: int,
     ):
         """
-        Функція delete_from_cart.
+        Endpoint delete_from_cart.
 
         Цей метод є декоратором для видалення квитка з кошика користувача за його ідентифікатором.
         Вхідними параметрами є запит користувача та ідентифікатор замовлення. Метод видаляє замовлення з кошика
@@ -163,7 +163,8 @@ class OrderViewSet(
     @extend_schema(
         responses={
             status.HTTP_204_NO_CONTENT: None,
-        }
+        },
+        request=None,
     )
     @action(
         methods=["POST"],
@@ -175,7 +176,7 @@ class OrderViewSet(
             pk: int,
     ):
         """
-        Функція buy_ticket.
+        Endpoint buy_ticket.
 
         Цей метод дозволяє здійснювати оплату для замовлення з конкретним ідентифікатором. При виклику методу
         передається ідентифікатор замовлення та користувач, який здійснює оплату. Після успішного здійснення оплати,
@@ -192,7 +193,8 @@ class OrderViewSet(
     @extend_schema(
         responses={
             status.HTTP_204_NO_CONTENT: None,
-        }
+        },
+        request=None,
     )
     @action(
         methods=["POST"],
@@ -204,9 +206,9 @@ class OrderViewSet(
             pk: int,
     ):
         """
-        Функція return_ticket.
+        Endpoint return_ticket.
 
-        Функція return_ticket повертає квиток після його покупки. Приймає запит на повернення квитка за його унікальним
+        Endpoint return_ticket повертає квиток після його покупки. Приймає запит на повернення квитка за його унікальним
         ідентифікатором. Викликає функцію return_purchased_ticket з відповідними параметрами. Повертає відповідь
         з HTTP-статусом 204 NO CONTENT.
         """
@@ -224,7 +226,7 @@ class OrderViewSet(
     )
     def total_spent_orders(self, request):
         """
-        Функція total_spent_orders.
+        Endpoint total_spent_orders.
 
         Повертає загальну суму витрачених коштів користувачем на замовлення.
         Аргументи:

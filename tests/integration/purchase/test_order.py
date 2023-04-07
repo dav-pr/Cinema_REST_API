@@ -319,3 +319,40 @@ class TestOrder:
 
         assert response.status_code == status.HTTP_200_OK
         assert response.json() == {"total_spent": ticket.price}
+
+    def test_user_total_spent_with_returning(
+            self,
+            api_test_client: Client,
+            test_superuser: User,
+            tickets,
+    ):
+        ticket = tickets[0]
+        other_ticket = tickets[1]
+
+        order = add_ticket_to_cart(
+            buyer=test_superuser,
+            ticket=ticket,
+        )
+        other_order = add_ticket_to_cart(
+            buyer=test_superuser,
+            ticket=other_ticket,
+        )
+        buy_ticket(
+            order_id=order.id,
+            buyer=test_superuser,
+        )
+        buy_ticket(
+            order_id=other_order.id,
+            buyer=test_superuser,
+        )
+        return_purchased_ticket(
+            buyer=test_superuser,
+            order_id=other_order.id,
+        )
+
+        response = api_test_client.get(
+            self.api_endpoint + "total_spent_orders/",
+        )
+
+        assert response.status_code == status.HTTP_200_OK
+        assert response.json() == {"total_spent": ticket.price}

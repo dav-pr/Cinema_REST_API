@@ -3,7 +3,11 @@
 from django.contrib.auth import get_user_model
 
 from rest_framework import permissions
+from rest_framework.decorators import action
+from rest_framework.generics import get_object_or_404
+
 from rest_framework.mixins import CreateModelMixin
+from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from users.serializers import UserModelSerializer
@@ -30,3 +34,26 @@ class UserViewSet(CreateModelMixin, GenericViewSet):
     model = get_user_model()
     permission_classes = [permissions.AllowAny]
     serializer_class = UserModelSerializer
+
+    def get_permissions(self):
+        if self.action == "create":
+            permission_classes = [
+                permissions.AllowAny,
+            ]
+        else:
+            permission_classes = [
+                permissions.IsAuthenticated,
+            ]
+        return [permission() for permission in permission_classes]
+
+    @action(
+        detail=False,
+        methods=["GET"],
+    )
+    def retrieve_self(self, request, *args, **kwargs):
+        instance = get_object_or_404(
+            self.model.objects.all(),
+            pk=request.user.id,
+        )
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
