@@ -1,4 +1,4 @@
-# cinema
+# Cinema_REST_API
 
 Create virtual environment:
 `virtualenv venv -p python3.11`
@@ -25,4 +25,4 @@ Swagger docs to API can be found here:
 `http://127.0.0.1:8000/api/schema/redoc/`
 
 Run tests:
-`python -m pytest tests/`# Cinema_REST_API  
+`python -m pytest tests/`
