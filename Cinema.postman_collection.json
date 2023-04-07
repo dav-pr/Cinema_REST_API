@@ -1,0 +1,1534 @@
+{
+	"info": {
+		"_postman_id": "8a40d6c0-f4db-4526-a079-0f8b90ab61a3",
+		"name": "Cinema",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26067346"
+	},
+	"item": [
+		{
+			"name": "Адмін панель",
+			"item": [
+				{
+					"name": "Зали",
+					"item": [
+						{
+							"name": "Отримати відомості про зали",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/?limit=2&offset=0",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Створити зал",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Зелений\",\n  \"cinema\": 2,\n  \"seats_tuple\": [5, 6, 7, 8 ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/hall/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"hall",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Отримати відомості про конкретний зал",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/?limit=2&offset=0",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Кінотеатри",
+					"item": [
+						{
+							"name": "Отримати відомості про кінотеатри",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/?limit=2&offset=0",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Отримати відомості про кінотеатри Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/?limit=2&offset=0",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Отримати відомості про конктерний кінотеарт кінотеатри Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/2/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										"2",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Спроба створити такий самий  кінотеатр, права адміна",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/?limit=2&offset=0",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Створити  кінотеатр, права адміна",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n            \"phone_number\": \"+12125552368\",\n            \"name\": \"Кінопалаці-2\",\n            \"address\": \"Шота Руставелі 7\",\n            \"facebook_social_link\": \"http://somelink.com\",\n            \"instagram_social_link\": \"http://somelink.com\",\n            \"youtube_social_link\": \"http://somelink.com\"\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/cinema/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"cinema",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Токени",
+					"item": [
+						{
+							"name": "admin login",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"dav_pr@tutanota.com\",\n  \"password\": \"283dav\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/token/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify token Access token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"{{ACCESS_TOKEN}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/token/verify/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"token",
+										"verify",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify Refresh token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"{{REFRESH_TOKEN}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/token/verify/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"token",
+										"verify",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "refresh token",
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4MDMyMDI3OCwiaWF0IjoxNjgwMzE5Njc4LCJqdGkiOiI0MmE5NWZkYzYzMzk0NjFjYjYyMDk4YWRjZGI3M2JlNSIsInVzZXJfaWQiOjJ9.wHUSNWCWuYA9HMC5_KHHS9UVYmeC-swr3362aVAQueM\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/token/refresh/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"token",
+										"refresh",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Фільми",
+					"item": [
+						{
+							"name": "Отримати інформацію про усі фільми",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/movie/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"movie",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Створити  фільм",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Кримінальне чтиво",
+											"type": "text"
+										},
+										{
+											"key": "poster",
+											"type": "file",
+											"src": "/Users/andrejdavidcenko/Documents/It generation/Django/Cinema/Постер Кримінальне чтиво.webp"
+										},
+										{
+											"key": "director",
+											"value": "Quentin Tarantino",
+											"type": "text"
+										},
+										{
+											"key": "release_date",
+											"value": "1999-01-01",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+											"type": "text"
+										},
+										{
+											"key": "rent_start_date",
+											"value": "2023-04-12",
+											"type": "text"
+										},
+										{
+											"key": "rent_end_date",
+											"value": "2023-04-20",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "189",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{HOST}}/api/movie/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"movie",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Отримати інформацію про конкретний фільм",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/movie/1/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"movie",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Сеанси",
+					"item": [
+						{
+							"name": "Створити сеанс",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 120,\n  \"start_time\": \"11:50\",\n  \"start_date\": \"2023-04-06\",\n  \"end_date\": \"2023-04-06\",\n  \"hall\": 1,\n  \"movie\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/screening_session/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"screening_session",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Створити сеанс поза межами прокату більше",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 120,\n  \"start_time\": \"11:50\",\n  \"start_date\": \"2023-04-06\",\n  \"end_date\": \"2023-04-06\",\n  \"hall\": 1,\n  \"movie\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/screening_session/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"screening_session",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Створити сеанс поза межами прокату більше Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"price\": 120,\n  \"start_time\": \"11:50\",\n  \"start_date\": \"2023-04-06\",\n  \"end_date\": \"2023-04-06\",\n  \"hall\": 1,\n  \"movie\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/screening_session/",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"screening_session",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const value = (key, defaultVlue) => pm.globals.get(key) || defaultVlue;",
+							"const setValue = (key, value) => pm.globals.set(key, value);",
+							"const getTimeStamp = (expires_in = 0) => {",
+							"    const expiryDate = new Date();",
+							"    expiryDate.setSeconds(expiryDate.getSeconds() + expires_in);",
+							"    return expiryDate.getTime();",
+							"}",
+							"",
+							"const sendRequest = (url_str, urlencoded) => {",
+							"    ",
+							"    ",
+							"    pm.variables.set('email', 'dav_pr@tutanota.com');",
+							"    pm.variables.set('password', '283dav');",
+							"",
+							"// Send a POST request to the /api/token/ endpoint to obtain a JWT token",
+							"pm.sendRequest({",
+							"    url: url_str,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Content-Type': 'application/json',",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        //raw: JSON.stringify({ email: pm.variables.get('email'), password: pm.variables.get('password') })",
+							"        raw: urlencoded",
+							"",
+							"    }",
+							"}, function (err, res) {",
+							"    // Handle the response",
+							"    if (err) {",
+							"        console.log(err);",
+							"    } else {",
+							"        // Save the JWT token to an environment variable",
+							"        //const { access_token, refresh_token, expires_in } = res.json();",
+							"        const { access, refresh } = res.json();",
+							"        const access_token = access;",
+							"        const refresh_token = refresh;",
+							"",
+							"        setValue('ACCESS_TOKEN', access_token);",
+							"        setValue('REFRESH_TOKEN', refresh_token);",
+							"        //console.log('ACCESS_TOKEN=', value('ACCESS_TOKEN'));",
+							"        //console.log('REFRESH_TOKEN=', value('REFRESH_TOKEN'));   ",
+							"",
+							"    }",
+							"});",
+							"}",
+							"",
+							"const sendLoginRequest = () => {",
+							"    const username = pm.environment.get('AUTH_USERNAME') || 'dav_pr@tutanota.com';",
+							"    const password = pm.environment.get('AUTH_PASSWORD') || '283dav';",
+							"    //console.log('Send login request');",
+							"    sendRequest('http://127.0.0.1:8000/api/token/', JSON.stringify({",
+							"        'email': username,",
+							"        'password': password}",
+							"    ));",
+							"}",
+							"",
+							"const sendRefreshTokenRequest = () => {",
+							"    const refreshToken = value('REFRESH_TOKEN');",
+							"    //console.log('Send refresh token request');",
+							"    const host = pm.environment.get('HOST') || 'http://127.0.0.1:8000';",
+							"",
+							"    sendRequest( `${host}/api/token/refresh/`, JSON.stringify(",
+							"        {'refresh': value('REFRESH_TOKEN') ",
+							"        }",
+							"    ));",
+							"}",
+							"",
+							"const sendVarifyTokenRequest = () => {",
+							"    ",
+							"    //console.log('Send Varify token request');",
+							"    const host = pm.environment.get('HOST') || 'http://127.0.0.1:8000';",
+							"    //console.log('sendVarifyTokenRequest ACCESS_TOKEN=', value('ACCESS_TOKEN'));",
+							"",
+							"    try{",
+							"",
+							"        pm.sendRequest({",
+							"            url: `${host}/api/token/verify/`,",
+							"            method: 'POST',",
+							"            header: {",
+							"                'Content-Type': 'application/json',",
+							"            },",
+							"            body: {",
+							"                mode: 'raw',",
+							"                raw: JSON.stringify({'token': value('ACCESS_TOKEN')})",
+							"",
+							"                }",
+							"            }, function (err, res) {",
+							"            // Handle the response",
+							"            const statusCode = res.code;",
+							"            //console.log('res.code', res.code)",
+							"            if (statusCode !== 200) {",
+							"",
+							"                //console.log('тоукен невалідний');",
+							"                setValue('ACCESS_TOKEN', null);",
+							"            } else {",
+							"                //console.log('тоукен валідний');",
+							"                //console.log(res);",
+							"",
+							"            }",
+							"        });",
+							"    }",
+							"    catch (error) {",
+							"    //console.log(error);",
+							"    setValue('ACCESS_TOKEN', null);",
+							"",
+							"    }",
+							"}",
+							"",
+							"//sendVarifyTokenRequest();",
+							"var token = value('ACCESS_TOKEN');",
+							"//const accessTokenExpiry = value('ACCESS_TOKEN_EXPIRY');",
+							"//console.log(\"token=\", token);",
+							"",
+							"if(!token) {",
+							"    sendLoginRequest();",
+							"} else  {",
+							"    sendVarifyTokenRequest();",
+							"    token = value('ACCESS_TOKEN');",
+							"    //console.log(\"token after varify=\", token);",
+							"    if   (!token) {",
+							"        sendLoginRequest();",
+							"    }",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Будь-який користувач",
+			"item": [
+				{
+					"name": "Отримати відомості усі сеанси",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/screening/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Створення користувача",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"юзер\",\n  \"password\": \"string\",\n  \"email\": \"user@example.com\",\n  \"first_name\": \"string\",\n  \"last_name\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/users/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Отримати відомості по конкретному сеансу",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/screening/1/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Дії авторизованого користувача",
+			"item": [
+				{
+					"name": "Отримати усі замовлення",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/screening/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Отримати відомості про баланс",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/screening/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"screening",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Отримання відомостей з кошика",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/cart/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Додавання квитка до кошика",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/cart/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Купівля квитків",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/cart/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Видалення елементу кошика",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/1/delete_from_cart/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"1",
+								"delete_from_cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Повернення квитка",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/1/return_ticket/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"1",
+								"return_ticket",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Загальна сума витрачених коштів",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/order/total_spent_orders/",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"order",
+								"total_spent_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{ACCESS_TOKEN_USER}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const value = (key, defaultVlue) => pm.globals.get(key) || defaultVlue;",
+							"const setValue = (key, value) => pm.globals.set(key, value);",
+							"const getTimeStamp = (expires_in = 0) => {",
+							"    const expiryDate = new Date();",
+							"    expiryDate.setSeconds(expiryDate.getSeconds() + expires_in);",
+							"    return expiryDate.getTime();",
+							"}",
+							"",
+							"const sendRequest = (url_str, urlencoded) => {",
+							"    ",
+							"    pm.variables.set('email', 'user_1@example.com');",
+							"    pm.variables.set('password', 'string');",
+							"",
+							"// Send a POST request to the /api/token/ endpoint to obtain a JWT token",
+							"pm.sendRequest({",
+							"    url: url_str,",
+							"    method: 'POST',",
+							"    header: {",
+							"        'Content-Type': 'application/json',",
+							"    },",
+							"    body: {",
+							"        mode: 'raw',",
+							"        //raw: JSON.stringify({ email: pm.variables.get('email'), password: pm.variables.get('password') })",
+							"        raw: urlencoded",
+							"",
+							"    }",
+							"}, function (err, res) {",
+							"    // Handle the response",
+							"    if (err) {",
+							"        //console.log(err);",
+							"    } else {",
+							"        // Save the JWT token to an environment variable",
+							"        //const { access_token, refresh_token, expires_in } = res.json();",
+							"        const { access, refresh } = res.json();",
+							"        const access_token = access;",
+							"        const refresh_token = refresh;",
+							"",
+							"        setValue('ACCESS_TOKEN_USER', access_token);",
+							"        setValue('REFRESH_TOKEN_USER', refresh_token);",
+							"        //console.log('ACCESS_TOKEN=', value('ACCESS_TOKEN'));",
+							"        //console.log('REFRESH_TOKEN=', value('REFRESH_TOKEN'));   ",
+							"",
+							"    }",
+							"});",
+							"}",
+							"",
+							"const sendLoginRequest = () => {",
+							"    const username = 'user_1@example.com';",
+							"    const password = 'string';",
+							"    //console.log('Send login request');",
+							"    sendRequest('http://127.0.0.1:8000/api/token/', JSON.stringify({",
+							"        'email': username,",
+							"        'password': password}",
+							"    ));",
+							"}",
+							"",
+							"const sendRefreshTokenRequest = () => {",
+							"    const refreshToken = value('REFRESH_TOKEN_USER');",
+							"    //console.log('Send refresh token request');",
+							"    const host = pm.environment.get('HOST') || 'http://127.0.0.1:8000';",
+							"",
+							"    sendRequest( `${host}/api/token/refresh`, JSON.stringify(",
+							"        {'refresh': value('REFRESH_TOKEN_USER') ",
+							"        }",
+							"    ));",
+							"}",
+							"",
+							"const sendVarifyTokenRequest = () => {",
+							"    ",
+							"    //console.log('Send Varify token request');",
+							"    const host = pm.environment.get('HOST') || 'http://127.0.0.1:8000';",
+							"",
+							"    try{",
+							"",
+							"        pm.sendRequest({",
+							"            url: `${host}/api/token/verify/`,",
+							"            method: 'POST',",
+							"            header: {",
+							"                'Content-Type': 'application/json',",
+							"            },",
+							"            body: {",
+							"                mode: 'raw',",
+							"                raw: JSON.stringify({'token': value('ACCESS_TOKEN_USER')})",
+							"",
+							"                }",
+							"            }, function (err, res) {",
+							"            // Handle the response",
+							"            const statusCode = res.code;",
+							"            if (statusCode !== 200) {",
+							"",
+							"                //console.log('тоукен невалідний');",
+							"                setValue('ACCESS_TOKEN_USER', null);",
+							"            } else {",
+							"                //console.log('тоукен валідний');",
+							"                //console.log(res);",
+							"",
+							"            }",
+							"        });",
+							"    }",
+							"    catch (error) {",
+							"    //console.log(error);",
+							"    setValue('ACCESS_TOKEN_USER', null);",
+							"",
+							"    }",
+							"",
+							"}",
+							"",
+							"//sendVarifyTokenRequest();",
+							"var token = value('ACCESS_TOKEN_USER');",
+							"//const accessTokenExpiry = value('ACCESS_TOKEN_EXPIRY');",
+							"//console.log(\"token=\", token);",
+							"console.log('start user')",
+							"if(!token) {",
+							"    sendLoginRequest();",
+							"} else  {",
+							"    sendVarifyTokenRequest();",
+							"    token = value('ACCESS_TOKEN_USER');",
+							"    //console.log(\"token after varify=\", token);",
+							"    if   (!token) {",
+							"        sendLoginRequest();",
+							"    }",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{ACCESS_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}

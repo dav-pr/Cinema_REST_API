@@ -9,7 +9,7 @@ from django.contrib import admin
 
 from cinema.admin import AdminInteractPermissionModelAdminMixin
 
-from cinema_hall.models import Cinema, Hall
+from cinema_hall.models import Cinema, Hall, Seat
 
 admin.site.register(
     Cinema,
@@ -18,5 +18,10 @@ admin.site.register(
 
 admin.site.register(
     Hall,
+    AdminInteractPermissionModelAdminMixin,
+)
+
+admin.site.register(
+    Seat,
     AdminInteractPermissionModelAdminMixin,
 )

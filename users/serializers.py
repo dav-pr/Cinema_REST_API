@@ -49,6 +49,7 @@ class UserModelSerializer(serializers.ModelSerializer):
         write_only_fields = ("password", )
         read_only_fields = ("id", "balance")
 
+
     def create(self, validated_data):
         """Створення нового користувача.
 

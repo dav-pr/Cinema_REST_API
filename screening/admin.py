@@ -7,7 +7,7 @@
 from django.contrib import admin
 
 from cinema.admin import AdminInteractPermissionModelAdminMixin
-from screening.models import Movie, Ticket
+from screening.models import Movie, Ticket, Screening
 
 
 """
@@ -24,5 +24,10 @@ admin.site.register(
 
 admin.site.register(
     Ticket,
+    AdminInteractPermissionModelAdminMixin,
+)
+
+admin.site.register(
+    Screening,
     AdminInteractPermissionModelAdminMixin,
 )
