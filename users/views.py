@@ -2,7 +2,10 @@
 
 from django.contrib.auth import get_user_model
 
-from rest_framework import permissions
+
+from drf_spectacular.utils import extend_schema
+
+from rest_framework import permissions, status
 from rest_framework.decorators import action
 from rest_framework.generics import get_object_or_404
 
@@ -10,7 +13,7 @@ from rest_framework.mixins import CreateModelMixin
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
-from users.serializers import UserModelSerializer
+from users.serializers import UserModelSerializer, RefreshTokenSerializer
 
 
 class UserViewSet(CreateModelMixin, GenericViewSet):
@@ -57,3 +60,32 @@ class UserViewSet(CreateModelMixin, GenericViewSet):
         )
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
+
+# реалізація логаута
+
+@extend_schema(
+        request=RefreshTokenSerializer,
+        responses={
+            status.HTTP_204_NO_CONTENT: None,
+        },
+    )
+    @action(
+        detail=False,
+        methods=["POST"],
+    )
+    def logout(
+        self,
+        request,
+        *args,
+        **kwargs,
+    ):
+        serializer = RefreshTokenSerializer(
+            data=request.data,
+        )
+        serializer.is_valid(
+            raise_exception=True,
+        )
+        serializer.save()
+        return Response(
+            status=status.HTTP_204_NO_CONTENT,
+        )
